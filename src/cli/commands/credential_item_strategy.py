@@ -1,5 +1,5 @@
 import getpass
-from keystore.keystore_manager import KeyStoreManager
+from ..keystore.keystore_manager import KeyStoreManager
 from .item_strategy import ItemStrategy
 
 class CredentialItemStrategy(ItemStrategy):    

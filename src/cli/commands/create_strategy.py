@@ -1,4 +1,4 @@
-from keystore.keystore_manager import KeyStoreManager
+from ..keystore.keystore_manager import KeyStoreManager
 from .command_strategy import CommandStrategy
 from .item_strategy_factory import ItemStrategyFactory
 

@@ -1,4 +1,7 @@
 from rich import print as rprint
+from rich.console import Console
+from rich.table import Table
+
 def print_keystore_list(data: dict, verbose: bool = False, password: bool = False):
   items = []
   
@@ -17,38 +20,42 @@ def print_keystore_list(data: dict, verbose: bool = False, password: bool = Fals
     print('No items found in keystore.')
     return
   
-  # Define column widths (Docker style)
-  col_name = 30
-  col_type = 15
-  col_user = 15
-  col_pass = 15
-  col_content = 25
-  
-  # Header
-  if verbose:
-    header =  f"{'NAME':<{col_name}}  {'TYPE':<{col_type}}  {'USER':<{col_user}} {'PASS':<{col_user}}  {'CONTENT':<{col_content}}" 
-  else:
-    header = f"{'NAME':<{col_name}}  {'TYPE':<{col_type}}" 
-  
-  rprint("[blue]Keystore Items:[/blue]")
-  print(header)
+  console = Console()
 
-  # Rows
-  for item in items:
+  # Create a Table instance and set box=None to remove borders
+  table = Table(box=None, title="Keystore Items", show_header=True, header_style="bold magenta ")
+
+  # Define columns
+  table.add_column("NAME", style="", no_wrap=True)
+  table.add_column("TYPE", style="")
+  if verbose:
+    table.add_column("USER", style="")
+    table.add_column("PASS", style="")
+    table.add_column("CONTENT", style="")
+  
+  # Add rows to the table
+  for item in items:  
     if verbose:
       content = item['content']
-      if content and len(str(content)) > col_content - 2:
-        content = str(content)[:col_content-5] + '...'
+      if content and len(str(content)) > 35:
+        content = str(content)[:32] + '...'
       else:
         content = content or '-'
-        
-      str_pass = '******' if not password and item['type'] == 'credential' else (item['password'] or '-')
       
+      str_pass = '******' if not password and item['type'] == 'credential' else (item['password'] or '-')
       user = item['user'] or '-'
-      row = f"{item['name']:<{col_name}}  {(item['type'] or '-'):<{col_type}}  {user:<{col_user}} {str_pass:<{col_pass}}  {str(content):<{col_content}}"
+      table.add_row(
+        item['name'],
+        item['type'] or '-',
+        user,
+        str_pass,
+        str(content)
+      )
     else:
-      row = f"{item['name']:<{col_name}}  {(item['type'] or '-'):<{col_type}}"
-    
-    print(row)
-  
+      table.add_row(
+        item['name'],
+        item['type'] or '-'
+      )
+
+  console.print(table)
   print()

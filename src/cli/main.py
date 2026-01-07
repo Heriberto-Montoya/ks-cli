@@ -1,8 +1,9 @@
-import argparse
-import os, sys
+import sys
 
-from commands.exec_command import ExecCommand
-from arguments.index import DefinedArguments
+
+
+from .commands.exec_command import ExecCommand
+from .arguments.index import DefinedArguments
 
 
 def main() -> None:

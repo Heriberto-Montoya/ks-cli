@@ -1,4 +1,5 @@
-from keystore.keystore_manager import KeyStoreManager
+from .search_strategy import SearchStrategy
+from ..keystore.keystore_manager import KeyStoreManager
 from .create_strategy import CreateStrategy
 from .list_strategy import ListStrategy
 
@@ -9,7 +10,8 @@ class ExecCommand:
     self.ks_manager = KeyStoreManager(master_password=master_password)
     self.strategies = {
       "create": CreateStrategy(self.ks_manager),
-      "list": ListStrategy(self.ks_manager)
+      "list": ListStrategy(self.ks_manager),
+      "search": SearchStrategy(self.ks_manager),
     }
   
   def execute(self):

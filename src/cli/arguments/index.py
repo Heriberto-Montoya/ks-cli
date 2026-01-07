@@ -8,6 +8,14 @@ class DefinedArguments:
     self._add_create_parser()
     self._add_list_parser()
     self._pass_vault_parser()
+    self._search_parser()
+
+  def _search_parser(self):
+    search = self.subparsers.add_parser("search", help="Search keystores")
+    search.add_argument("query", help="Search query string")
+    search.add_argument("--type", "-t", choices=["credential", "text"], help="Type of keystore to search")
+    search.add_argument("--verbose", "-v", action="store_true", help="Show detailed information")
+    search.add_argument("--password", "-p", action="store_true", help="Show password in item credentials keystore")
 
   def _add_create_parser(self):
     create = self.subparsers.add_parser("create", help="Create a new keystore")

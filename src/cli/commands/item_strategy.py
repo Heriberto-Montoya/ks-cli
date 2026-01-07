@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from keystore.keystore_manager import KeyStoreManager
+from ..keystore.keystore_manager import KeyStoreManager
 
 class ItemStrategy(ABC):
     @abstractmethod

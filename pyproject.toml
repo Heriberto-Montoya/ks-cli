@@ -6,6 +6,7 @@ dependencies = [
     "PyInquirer",
     "rich",
     "textual",
+    "cryptography"
 ]
 
 

@@ -1,2 +1,0 @@
-[console_scripts]
-cb = cli.main:main
