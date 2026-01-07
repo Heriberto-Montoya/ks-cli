@@ -9,6 +9,10 @@ class DefinedArguments:
     self._add_list_parser()
     self._pass_vault_parser()
     self._search_parser()
+    self._gui_parser()
+
+  def _gui_parser(self):
+    gui = self.subparsers.add_parser("gui", help="Launch the GUI application")
 
   def _search_parser(self):
     search = self.subparsers.add_parser("search", help="Search keystores")

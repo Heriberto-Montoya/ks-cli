@@ -14,7 +14,7 @@ class SearchStrategy(CommandStrategy):
         password = getattr(args, "password", False)
 
         if not query:
-            print("Debe especificar una consulta de búsqueda.")
+            print("You must specify a search query..")
             return
 
         vault = self.ks_manager.list() or {}

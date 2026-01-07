@@ -2,6 +2,7 @@ from .search_strategy import SearchStrategy
 from ..keystore.keystore_manager import KeyStoreManager
 from .create_strategy import CreateStrategy
 from .list_strategy import ListStrategy
+from .gui_strategy import GuiStrategy 
 
 
 class ExecCommand:  
@@ -12,6 +13,7 @@ class ExecCommand:
       "create": CreateStrategy(self.ks_manager),
       "list": ListStrategy(self.ks_manager),
       "search": SearchStrategy(self.ks_manager),
+      "gui": GuiStrategy(self.ks_manager),
     }
   
   def execute(self):
