@@ -1,2 +1,2 @@
 [console_scripts]
-ks = cli.main:main
+ks = ks.main:main

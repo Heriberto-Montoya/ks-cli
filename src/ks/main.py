@@ -1,9 +1,6 @@
 import sys
-
-
-
-from .commands.exec_command import ExecCommand
-from .arguments.index import DefinedArguments
+from ks.commands.exec_command import ExecCommand
+from ks.arguments.index import DefinedArguments
 
 
 def main() -> None:
@@ -17,8 +14,8 @@ def main() -> None:
             executor.execute()
         else:
             commands.help()
-    except Exception:
-        print(sys.exc_info()[1])
+    # except Exception:
+    #     print(sys.exc_info()[1])
     except KeyboardInterrupt:
         sys.exit(0)
     return

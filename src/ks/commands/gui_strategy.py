@@ -1,6 +1,6 @@
 from .command_strategy import CommandStrategy
-from ..gui.keystore_app import KeystoreApp
-from ..keystore.keystore_manager import KeyStoreManager
+from ks.gui.keystore_app import KeystoreApp
+from ks.keystore.keystore_manager import KeyStoreManager
 
 class GuiStrategy(CommandStrategy):
     def __init__(self, ks_manager: KeyStoreManager):

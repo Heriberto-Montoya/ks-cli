@@ -1,6 +1,6 @@
 from .command_strategy import CommandStrategy
-from ..keystore.keystore_manager import KeyStoreManager
-from ..tui.tui_list import print_keystore_list
+from ks.keystore.keystore_manager import KeyStoreManager
+from ks.tui.tui_list import print_keystore_list
 
 
 class SearchStrategy(CommandStrategy):

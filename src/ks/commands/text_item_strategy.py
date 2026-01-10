@@ -1,4 +1,4 @@
-from ..keystore.keystore_manager import KeyStoreManager
+from ks.keystore.keystore_manager import KeyStoreManager
 from .item_strategy import ItemStrategy
 
 class TextItemStrategy(ItemStrategy):

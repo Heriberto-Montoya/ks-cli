@@ -3,15 +3,13 @@ name = "keystore-cli"
 version = "0.1.0"  # This field is mandatory
 description = "A Keystore CLI"
 dependencies = [
-    "PyInquirer",
     "rich",
     "textual",
-    "cryptography"
 ]
 
 
 [project.scripts]
-ks = "cli.main:main"
+ks = "ks.main:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]

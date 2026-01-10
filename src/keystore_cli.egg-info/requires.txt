@@ -1,3 +1,2 @@
-PyInquirer
 rich
 textual
