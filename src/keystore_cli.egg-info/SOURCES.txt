@@ -23,6 +23,7 @@ src/ks/commands/search_strategy.py
 src/ks/commands/text_item_strategy.py
 src/ks/gui/__init__.py
 src/ks/gui/css.py
+src/ks/gui/keylist_app.py
 src/ks/gui/keystore_app.py
 src/ks/gui/sidebar_app.py
 src/ks/keystore/__init__.py

@@ -37,10 +37,10 @@ def print_keystore_list(data: dict, verbose: bool = False, password: bool = Fals
   for item in items:  
     if verbose:
       content = item['content']
-      if content and len(str(content)) > 35:
-        content = str(content)[:32] + '...'
-      else:
-        content = content or '-'
+      # if content and len(str(content)) > 35:
+      #   content = str(content)[:32] + '...'
+      # else:
+      #   content = content or '-'
       
       str_pass = '******' if not password and item['type'] == 'credential' else (item['password'] or '-')
       user = item['user'] or '-'
