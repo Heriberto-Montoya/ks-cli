@@ -1,10 +1,18 @@
 import sys
 from ks.commands.exec_command import ExecCommand
 from ks.arguments.index import DefinedArguments
+import os
 
 
 def main() -> None:
-    #os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("""
+    █   █  ████       ███  █     ███ 
+    █  █  █          █     █      █  
+    ███    ███  ████ █     █      █  
+    █  █      █      █     █      █  
+    █   █ ████        ███  █████ ███ 
+    """)
     commands = DefinedArguments()
     args = commands.parse_arguments()
 
